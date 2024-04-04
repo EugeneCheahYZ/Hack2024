@@ -31,12 +31,12 @@ button {
     display: block;
     width: 50%;
     margin: 20px auto 0;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform transition */
+    transition: background-color 0.3s ease, transform 0.3s ease; 
 }
 
 button:hover {
-    background-color: #5A6251; /* Slightly lighter shade when hovered */
-    transform: scale(1.05); /* Scales up the button to 105% */
+    background-color: #5A6251; 
+    transform: scale(1.05); 
 }
 
 input, button {
@@ -60,4 +60,43 @@ label {
     text-align: right;
     margin-right: 10px;
     font-weight: bold;
+}
+
+#darkModeToggle {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    width: auto;
+    font-size: 0.8rem;
+}
+
+.dark-theme {
+    background-color: #092019;
+    color: #e8ffd5;
+}
+
+.dark-theme .inputs, .dark-theme .inputs input, .dark-theme .inputs label {
+    color: #e8ffd4;
+}
+
+.dark-theme .product {
+    background-color: #63a28a;
+}
+
+.dark-theme button, .dark-theme button:hover {
+    background-color: #216555;
+    transition: background-color 1s ease;
+}
+
+.dark-theme button:hover {
+    background-color: #63a28a;
+}
+
+body, .product, button {
+    transition: background-color 0.8s ease;
 }
