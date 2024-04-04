@@ -5,17 +5,29 @@ body {
 }
 
 .product {
+<<<<<<< Updated upstream
     font-size: 2.5rem; 
     font-weight: bold;
     text-align: center;
     background-color: #1F1B24;
     border: none; 
+=======
+    font-size: 2.5rem; /* Adjusted for a more balanced appearance */
+    font-weight: bold;
+    text-align: center;
+    background-color: #1F1B24; /* Darker shade for the header */
+    border: none; /* Removed for a cleaner look */
+>>>>>>> Stashed changes
     margin: 10px;
     padding: 20px;
 }
 
 .inputs label, .inputs input {
+<<<<<<< Updated upstream
     color: #E0E0E0; 
+=======
+    color: #E0E0E0; /* Ensuring readability */
+>>>>>>> Stashed changes
 }
 
 .inputs {
@@ -24,11 +36,16 @@ body {
 }
 
 .input-group {
+<<<<<<< Updated upstream
     margin-bottom: 20px; 
+=======
+    margin-bottom: 20px; /* Increase space between input groups */
+>>>>>>> Stashed changes
 }
 
 label {
     display: inline-block;
+<<<<<<< Updated upstream
     width: 200px; 
     text-align: right;
     margin-right: 10px; 
@@ -36,11 +53,21 @@ label {
 
 input, button {
     margin-left: 10px;
+=======
+    width: 200px; /* Fixed width for labels */
+    text-align: right;
+    margin-right: 10px; /* Space between label and input */
+}
+
+input, button {
+    margin-left: 10px; /* Align inputs and button */
+>>>>>>> Stashed changes
 }
 
 button {
     background-color: #BB86FC;
     color: #121212;
+<<<<<<< Updated upstream
     border: none; /
     padding: 10px 20px;
     margin-top: 10px; 
@@ -51,6 +78,19 @@ button:hover {
     background-color: #9A67EA; 
 }
 
+=======
+    border: none; /* Style for a flat, minimalistic button */
+    padding: 10px 20px;
+    margin-top: 10px; /* Added space above the button */
+    cursor: pointer; /* Visual cue for interactivity */
+}
+
+button:hover {
+    background-color: #9A67EA; /* Slightly lighter shade for hover effect */
+}
+
+/* Additional global styles for a consistent look */
+>>>>>>> Stashed changes
 input, button {
     font-family: inherit;
     font-size: inherit;

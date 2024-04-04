@@ -6,6 +6,7 @@
     </head>
     <body>
         <h1 class='product'>STUDY PLANNER</h1>
+<<<<<<< Updated upstream
 
         <div class="inputs">
             <div class="input-group">
@@ -27,16 +28,53 @@
             </div>
         </div>
 
+=======
+
+
+        <p class="inputs">
+        <label>Days until Exam Period:</label><input id="days"><br>
+        <label>Study Time per Day:</label><input id="studyTime"><br>
+        <label>Subject:</label><input id="first"></body><br>
+        <label>Weightage:</label><input id="weight">
+        <button id="add">+</button>
+        </p>
+
+        <div class="inputs">
+            <div class="input-group">
+                <label>Days until Exam Period:</label>
+                <input id="days">
+            </div>
+            <div class="input-group">
+                <label>Study Time per Day:</label>
+                <input id="studyTime">
+            </div>
+            <div class="input-group">
+                <label>Subject 1:</label>
+                <input id="first">
+            </div>
+            <div class="input-group">
+                <label>Weightage:</label>
+                <input id="weight">
+                <button id="add">+</button>
+            </div>
+        </div>
+
+>>>>>>> Stashed changes
         <h1 id="subject"></h1>
-        <h1 id="weightage"></h1>
 
         <script>
             function x() {
                 subject.textContent = first.value;
-                weightage.textContent = weight.value;
             }
-
             first.oninput = x;
+<<<<<<< Updated upstream
+=======
+
+            var w = weightage.value;
+            document.write(w);
+
+            
+>>>>>>> Stashed changes
             weight.oninput = x;
         </script>
     </body>
