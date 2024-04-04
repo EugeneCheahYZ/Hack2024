@@ -5,17 +5,17 @@ body {
 }
 
 .product {
-    font-size: 2.5rem; /* Adjusted for a more balanced appearance */
+    font-size: 2.5rem; 
     font-weight: bold;
     text-align: center;
-    background-color: #1F1B24; /* Darker shade for the header */
-    border: none; /* Removed for a cleaner look */
+    background-color: #1F1B24;
+    border: none; 
     margin: 10px;
     padding: 20px;
 }
 
 .inputs label, .inputs input {
-    color: #E0E0E0; /* Ensuring readability */
+    color: #E0E0E0; 
 }
 
 .inputs {
@@ -24,34 +24,33 @@ body {
 }
 
 .input-group {
-    margin-bottom: 20px; /* Increase space between input groups */
+    margin-bottom: 20px; 
 }
 
 label {
     display: inline-block;
-    width: 200px; /* Fixed width for labels */
+    width: 200px; 
     text-align: right;
-    margin-right: 10px; /* Space between label and input */
+    margin-right: 10px; 
 }
 
 input, button {
-    margin-left: 10px; /* Align inputs and button */
+    margin-left: 10px;
 }
 
 button {
     background-color: #BB86FC;
     color: #121212;
-    border: none; /* Style for a flat, minimalistic button */
+    border: none; /
     padding: 10px 20px;
-    margin-top: 10px; /* Added space above the button */
-    cursor: pointer; /* Visual cue for interactivity */
+    margin-top: 10px; 
+    cursor: pointer; 
 }
 
 button:hover {
-    background-color: #9A67EA; /* Slightly lighter shade for hover effect */
+    background-color: #9A67EA; 
 }
 
-/* Additional global styles for a consistent look */
 input, button {
     font-family: inherit;
     font-size: inherit;
