@@ -29,9 +29,14 @@ button {
     cursor: pointer;
     border-radius: 15px;
     display: block;
-    width: 80%;
+    width: 50%;
     margin: 20px auto 0;
-    transition: background-color 0.3s ease; 
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform transition */
+}
+
+button:hover {
+    background-color: #5A6251; /* Slightly lighter shade when hovered */
+    transform: scale(1.05); /* Scales up the button to 105% */
 }
 
 input, button {
@@ -53,30 +58,4 @@ label {
     width: 200px;
     text-align: right;
     margin-right: 10px;
-}
-
-input, button {
-    margin-left: 10px;
-}
-
-#add {
-    background-color: #454E47;
-    color: #caf5a6;
-    border: none;
-    padding: 10px 20px;
-    margin-top: 10px;
-    cursor: pointer;
-    border-radius: 15px;
-    display: block;
-    width: 80%;
-    margin: 20px auto 0;
-}
-
-.input-group {
-    margin-bottom: 20px;
-    position: relative;
-}
-
-input, label {
-    width: calc(100% - 22px);
 }
