@@ -1,12 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>test3</h1>
-</body>
+<html>
+    <head>
+        <link rel="stylesheet" href = 'mainTest.css'> 
+        <title>Study Planner</title>
+    </head>
+    <body>
+        <h1 class = 'product'>STUDY PLANNER</h1>
+
+        <div><label>Subject 1:</label><input id="first"></body></div>
+        <button id="add">+</button><br>
+        <div><label>Subject 2:</label><input id="second"></div>
+        
+        <h1 id="subject"></h1>
+        <h1 id="subject2"></h1>
+
+        <script>
+            function x(){
+                subject.textContent = first.value;
+                subject2.textContent = second.value;
+            }
+
+            first.oninput = x;
+            second.oninput = x;
+            
+        </script>
+    </body>
 </html>
