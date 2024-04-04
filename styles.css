@@ -47,6 +47,7 @@ input, button {
 .inputs {
     width: 80%;
     margin: auto;
+    text-align: center;
 }
 
 .input-group {
@@ -58,4 +59,5 @@ label {
     width: 200px;
     text-align: right;
     margin-right: 10px;
+    font-weight: bold;
 }
