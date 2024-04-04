@@ -16,10 +16,6 @@ body {
     padding: 20px;
 }
 
-.inputs label, .inputs input {
-    color: #1d4800;
-}
-
 button {
     background-color: #454E47;
     color: #caf5a6;
@@ -32,6 +28,8 @@ button {
     width: 50%;
     margin: 20px auto 0;
     transition: background-color 0.3s ease, transform 0.3s ease; 
+    font-family: 'Poppins', sans-serif;
+    font-size: inherit;
 }
 
 button:hover {
@@ -39,12 +37,14 @@ button:hover {
     transform: scale(1.05); 
 }
 
-input, button {
+input{
     font-family: 'Poppins', sans-serif;
     font-size: inherit;
 }
 
 .inputs {
+    color: #1d4800;
+    display: inline-block;
     width: 80%;
     margin: auto;
     text-align: center;
@@ -100,3 +100,4 @@ label {
 body, .product, button {
     transition: background-color 0.8s ease;
 }
+

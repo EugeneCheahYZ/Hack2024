@@ -19,25 +19,52 @@
                 <label>Study Time per Day:</label>
                 <input id="studyTime">
             </div>
+            
             <div class="input-group">
-                <label>Subject 1:</label>
-                <input id="first">
+                <label>Subjects:</label>
+                <input id="subjectInput">
             </div>
             <div class="input-group">
                 <label>Weightage:</label>
-                <input id="weight">
-                <button id="add">+</button>
-            </div>
+                <input id="weightageInput">
+            </div>            
+            
         </div>
-
-        <h1 id="subject"></h1>
+        <div>
+            <button onclick="addSubjectandList()">+</button>               
+            <p class="lists">
+            <ol id="subjectList"></ol>
+            <ol id="weightageList"></ol> 
+            </p>
+        </div>
+        
 
         <script>
-            function x() {
-                subject.textContent = first.value;
+            function addSubjectandList() {
+                const subjectInput = document.getElementById('subjectInput');
+                const weightageInput = document.getElementById('weightageInput');
+                const subjectList = document.getElementById('subjectList');
+                const weightageList = document.getElementById('weightageList');
+                const non_empty_value = subjectInput.value.trim();
+                const non_empty_value1 = weightageInput.value.trim();
+
+                if (non_empty_value && non_empty_value1) {
+                    const NumberedList = document.createElement('li');
+                    NumberedList.textContent = non_empty_value;
+                    subjectList.appendChild(NumberedList);
+                    subjectInput.value = '';
+                    const NumberedList1 = document.createElement('li');
+                    NumberedList1.textContent = non_empty_value1;
+                    weightageList.appendChild(NumberedList1);
+                    weightageInput.value = '';
+
+
+                }
+
+                else {
+                    alert ('Please enter a subject and the weightage!!!');
+                }
             }
-            first.oninput = x;
-            weight.oninput = x;
         </script>
     </body>
 </html>
