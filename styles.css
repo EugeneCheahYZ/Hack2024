@@ -1,6 +1,6 @@
 body {
-    background-color: #121212;
-    color: #E0E0E0;
+    background-color: #96E6B3;
+    color: #e8ffd5;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -8,27 +8,27 @@ body {
     font-size: 2.5rem; /* Adjusted for a more balanced appearance */
     font-weight: bold;
     text-align: center;
-    background-color: #1F1B24; /* Darker shade for the header */
+    background-color: #568259; /* Darker shade for the header */
     border: none; /* Removed for a cleaner look */
     margin: 10px;
     padding: 20px;
 }
 
 .inputs label, .inputs input {
-    color: #E0E0E0; /* Ensuring readability */
+    color: #1d4800; /* Ensuring readability */
 }
 
 button {
-    background-color: #BB86FC;
-    color: #121212;
+    background-color: #454E47;
+    color: #caf5a6;
     border: none; /* Style for a flat, minimalistic button */
     padding: 10px 20px;
-    margin-top: 10px; /* Added space above the button */
+    margin-top: 10px; /* Added space above the bu   tton */
     cursor: pointer; /* Visual cue for interactivity */
 }
 
 button:hover {
-    background-color: #9A67EA; /* Slightly lighter shade for hover effect */
+    background-color: #568259; /* Slightly lighter shade for hover effect */
 }
 
 /* Additional global styles for a consistent look */
