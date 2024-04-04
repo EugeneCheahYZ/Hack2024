@@ -6,21 +6,28 @@
     <body>
         <h1 class = 'product'>STUDY PLANNER</h1>
 
-        <div><label>Subject 1:</label><input id="first"></body></div>
-        <button id="add">+</button><br>
-        <div><label>Subject 2:</label><input id="second"></div>
+        <p class="inputs">
+        <label>Days until Exam Period:</label><input id="days"><br>
+        <label>Study Time per Day:</label><input id="studyTime"><br>
+        <label>Subject 1:</label><input id="first"></body><br>
+        <label>Weightage:</label><input id="weight">
+        <button id="add">+</button>
+        </p>
+
         
         <h1 id="subject"></h1>
-        <h1 id="subject2"></h1>
+        <h1 id="weightage"></h1>
 
         <script>
             function x(){
                 subject.textContent = first.value;
-                subject2.textContent = second.value;
+                weightage.textContent = weight.value;
             }
 
             first.oninput = x;
-            second.oninput = x;
+            weight.oninput = x;
+
+
             
         </script>
     </body>
