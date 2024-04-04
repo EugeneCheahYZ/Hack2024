@@ -1,27 +1,58 @@
-    div{
-        display: inline-block;
-    }
-    .product{
-        font-size: 100px;
-        font-weight: bolder;
-        text-align: center;
-        color: aquamarine;
-        background-color: darkcyan;
-        border: 10px solid green;s
-        width: 95%;
-        margin: 10px;
-        padding: 20px;
-    }
+body {
+    background-color: #121212;
+    color: #E0E0E0;
+    font-family: 'Roboto', sans-serif;
+}
 
-    button {
-        display: inline-block;
+.product {
+    font-size: 2.5rem; /* Adjusted for a more balanced appearance */
+    font-weight: bold;
+    text-align: center;
+    background-color: #1F1B24; /* Darker shade for the header */
+    border: none; /* Removed for a cleaner look */
+    margin: 10px;
+    padding: 20px;
+}
 
-    }
-      
-    body {
-        background-color: #f5f5dc; /* light beige */
-    }
+.inputs label, .inputs input {
+    color: #E0E0E0; /* Ensuring readability */
+}
 
-    .inputs{
-        width: 80%;
-    }
+.inputs {
+    width: 80%;
+    margin: auto;
+}
+
+.input-group {
+    margin-bottom: 20px; /* Increase space between input groups */
+}
+
+label {
+    display: inline-block;
+    width: 200px; /* Fixed width for labels */
+    text-align: right;
+    margin-right: 10px; /* Space between label and input */
+}
+
+input, button {
+    margin-left: 10px; /* Align inputs and button */
+}
+
+button {
+    background-color: #BB86FC;
+    color: #121212;
+    border: none; /* Style for a flat, minimalistic button */
+    padding: 10px 20px;
+    margin-top: 10px; /* Added space above the button */
+    cursor: pointer; /* Visual cue for interactivity */
+}
+
+button:hover {
+    background-color: #9A67EA; /* Slightly lighter shade for hover effect */
+}
+
+/* Additional global styles for a consistent look */
+input, button {
+    font-family: inherit;
+    font-size: inherit;
+}
