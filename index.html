@@ -37,33 +37,47 @@
             <label>Weightage:</label><ol id="weightageList"></ol> 
             </p>
         </div>
+        <div>
+            <button onclick="output()">Submit</button>
+        </div>
         
 
         <script>
             function addSubjectandList() {
+                function Is_Alphanumeric(str) {
+                    return /^[a-zA-Z0-9]+(\s+[a-zA-Z0-9]+)*$/.test(str);
+                }
                 const subjectInput = document.getElementById('subjectInput');
                 const weightageInput = document.getElementById('weightageInput');
                 const subjectList = document.getElementById('subjectList');
                 const weightageList = document.getElementById('weightageList');
                 const non_empty_value = subjectInput.value.trim();
                 const non_empty_value1 = weightageInput.value.trim();
-
+                const validSubject = Is_Alphanumeric(non_empty_value);
+                
                 if (non_empty_value && non_empty_value1) {
-                    const NumberedList = document.createElement('li');
-                    NumberedList.textContent = non_empty_value;
-                    subjectList.appendChild(NumberedList);
-                    subjectInput.value = '';
-                    const NumberedList1 = document.createElement('li');
-                    NumberedList1.textContent = non_empty_value1;
-                    weightageList.appendChild(NumberedList1);
-                    weightageInput.value = '';
-
-
+                    if (Is_Alphanumeric(non_empty_value) == false) {
+                        alert ('Subject must only contain letters and numbers.');
+                    }
+                    
+                    if (isNaN(non_empty_value1)) {
+                        alert ('Weightage must only contain numbers.');
+                    }
+                    if (Is_Alphanumeric(non_empty_value) == true && !isNaN(non_empty_value1)) {
+                        const NumberedList = document.createElement('li');
+                        NumberedList.textContent = non_empty_value;
+                        subjectList.appendChild(NumberedList);
+                        subjectInput.value = '';
+                        const NumberedList1 = document.createElement('li');
+                        NumberedList1.textContent = non_empty_value1;
+                        weightageList.appendChild(NumberedList1);
+                        weightageInput.value = '';
+                    }
                 }
-
                 else {
-                    alert ('Please enter a subject and the weightage!!!');
+                    alert ('Both fields have to be filled!');
                 }
+                
             }
         </script>
     </body>
