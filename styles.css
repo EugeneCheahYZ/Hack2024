@@ -50,11 +50,19 @@ body {
     font-size: inherit;
 }
 
-button:hover {
-    background-color: #5A6251; 
+#addButton:hover {
+    background-color: #626d64; 
     transform: scale(1.02); 
     
 }
+
+#submitBtn:hover {
+    background-color: #626d64; 
+    transform: scale(1.02); 
+    
+}
+
+
 
 input{
     font-family: 'Poppins', sans-serif;
@@ -70,9 +78,23 @@ input{
     text-align: center;
 }
 
+.moon-icon {
+    display: block;
+}
+
 .input-group {
     margin-bottom: 20px;
+    transition: color 1s ease;
 }
+
+.input-group input {
+    border-radius: 10px; /* This will give the inputs rounded corners */
+    background-color: #e8ffd5; /* This sets the background color of the inputs */
+    border: 1px solid #ccc; /* Optional: sets the border color */
+    padding: 5px; /* Adds some padding inside the inputs for better text visibility */
+    transition: background-color 1s ease; /* Smooth transition for background color changes */
+}
+
 
 .box-container {
     padding: 40px;
@@ -80,8 +102,15 @@ input{
     width: 600px; 
     background-color: #6eb48e;
     border-radius: 10px 10px 0 0; /* Rounded top corners */
+    transition: background-color 1s ease;
 }
 
+input::placeholder {
+    color: rgba(31, 121, 63, 0.5); 
+    font-style: italic; 
+    text-align: center;
+    transition: color 1s ease;
+}
 
 label {
     display: inline-block;
@@ -98,25 +127,36 @@ label {
     background-color: #333;
     color: rgb(144, 219, 126);   
     border: none;
-    padding: 5px 10px;
+    padding: 10px 20px; /* Increased padding */
     cursor: pointer;
-    width: auto;
-    font-size: 0.6rem;
-    border-radius: 10px 10px
+    width: 80px; /* Set a specific width */
+    height: 50px; /* Set a specific height */
+    font-size: 1rem; /* Increased font size */
+    border-radius: 10px; 
+    transition: transform 0.5s ease, background-color 0.5s ease;
 }
+
+#darkModeToggle:hover {
+    background-color: #626d64; 
+    transform: scale(1.1);
+    
+}
+
 
 .dark-theme {
     background-color: #092019;
     color: #e8ffd5;
 }
 
-.dark-theme .inputs, .dark-theme .inputs label {
+.dark-theme .inputs{
     color: #e8ffd4;
+    transition: background-color 1s ease;
 }
 
 .dark-theme .product {
     background-color: #63a28a;
 }
+
 
 .dark-theme button, .dark-theme button:hover {
     background-color: #216555;
@@ -131,6 +171,13 @@ label {
     background-color: #46755b
 }
 
+.dark-theme .input-group input {
+    background-color: #143f32
+}
+
+.dark-theme .input-group input::placeholder {
+    color: #e8ffd588;
+}
 
 body, .product, button {
     transition: background-color 1s ease;

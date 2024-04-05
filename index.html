@@ -6,31 +6,32 @@
     </head>
     <body>
         <h1 class='product'>STUDY PLANNER</h1>
-        <button id="darkModeToggle">Dark Mode</button>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+        <button id="darkModeToggle">
+            <i class="fas fa-moon moon-icon"></i>
+        </button>
         <div class="box-container">
             <div class="inputs">
                 <div class="input-group">
-                    <label id ="input1">Days until Exam Period:</label>
-                    <input id="days">
-                    <label>Days</label>
+                    <label for="days">Days until Exam Period:</label>
+                    <input id="days" placeholder="e.g. 14">
                 </div>
                 <div class="input-group">
-                    <label id ="input2">Study Time per Day:</label>
-                    <input id="studyTime"><label>Hours per Day</label>
+                    <label for="studyTime">Study Time per Day:</label>
+                    <input id="studyTime" placeholder="e.g. 3">
                 </div>
                 
                 <div class="input-group">
-                    <label id ="input3">Subjects:</label>
-                    <input id="subjectInput">
-                    
+                    <label for="subjectInput">Subjects:</label>
+                    <input id="subjectInput" placeholder="sasf">
                 </div>
                 <div class="input-group">
-                    <label id ="input">Weightage:</label>
-                    <input id="weightageInput"> 
-                    <label>%</label>
+                    <label for="weightageInput">Weightage:</label>
+                    <input id="weightageInput" placeholder="e.g. 20">
                 </div>            
             </div>  
         </div>
+        
         <div>
             <button id="addButton" onclick="addSubjectandList()">+</button>               
             <div class="lists">
