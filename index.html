@@ -31,8 +31,8 @@
         <div>
             <button onclick="addSubjectandList()">+</button>               
             <p class="lists">
-            <ol id="subjectList"></ol>
-            <ol id="weightageList"></ol> 
+            <label>Subjects:</label><ol id="subjectList"></ol>
+            <label>Weightages:</label><ol id="weightageList"></ol> 
             </p>
         </div>
         <div>
@@ -94,18 +94,18 @@
                 let dL = (1 * daysLeft);
                 var studyTimePerDay = document.getElementById('studyTime').value;
                 let sTPD = (1 * studyTimePerDay);
-                var final = weightageTotal;
+                var final = '';
 
                 for (let j=0; j < weightageArray.length; j++){
-                    weightageTotal += weightageArray[j];
+                    weightageTotal += Number(weightageArray[j]);
                 }
 
-                /**for (let i=0; i < subjectArray.length; i++) {
-                    var totalTime = weightageArray[i] / 100 * (dL * sTPD);
+                for (let i=0; i < subjectArray.length; i++) {
+                    var totalTime = weightageArray[i] / weightageTotal * (dL * sTPD);
                     var studyDays = Math.floor(totalTime / sTPD);
                     var remainingHours = totalTime % sTPD;
-                    final += subjectArray[i] + ':' + studyDays + ' days ' + remainingHours + ' hours';
-                }**/
+                    final += subjectArray[i] + ':' + studyDays + ' days ' + remainingHours + ' hours' + '                               ';
+                }
                 
 
                 document.getElementById('display').textContent = final;
