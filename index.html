@@ -59,7 +59,15 @@
                 }
                 const non_empty_value = subjectInput.value.trim();
                 const non_empty_value1 = weightageInput.value.trim();
-
+                const non_empty_value2 = examP.value.trim();
+                const non_empty_value3 = sTime.value.trim();
+                
+                if (isNaN(non_empty_value2) || !non_empty_value2) {
+                    alert ('This field only accepts numbers.');
+                }
+                if (isNaN(non_empty_value3) || !non_empty_value3) {
+                    alert ('This field only accepts numbers.');
+                }
                 if (non_empty_value && non_empty_value1) {
                     if (Is_Alphanumeric(non_empty_value) == false) {
                         alert ('Subject must only contain letters and numbers.');
