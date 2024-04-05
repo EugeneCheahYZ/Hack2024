@@ -1,5 +1,3 @@
-
-
 <html>
     <head>
         <link rel="stylesheet" href='styles.css'>
@@ -34,27 +32,32 @@
             <button onclick="addSubjectandList()">+</button>               
             <p class="lists">
             <label>Subjects:</label><ol id="subjectList"></ol>
-            <label>Weightage:</label><ol id="weightageList"></ol> 
+            <label>Weightages:</label><ol id="weightageList"></ol> 
             </p>
         </div>
         <div>
-            <button onclick="output()">Submit</button>
+            <button onclick="displayOutput()">Submit</button>
+            <p class='outputdisplay' id="display"></p>
         </div>
+
         
 
         <script>
+            const subjectInput = document.getElementById('subjectInput');
+            const weightageInput = document.getElementById('weightageInput');
+
+            const subjectList = document.getElementById('subjectList');
+            const weightageList = document.getElementById('weightageList');
+            var subjectArray = [];
+            var weightageArray = [];
+
             function addSubjectandList() {
                 function Is_Alphanumeric(str) {
                     return /^[a-zA-Z0-9]+(\s+[a-zA-Z0-9]+)*$/.test(str);
                 }
-                const subjectInput = document.getElementById('subjectInput');
-                const weightageInput = document.getElementById('weightageInput');
-                const subjectList = document.getElementById('subjectList');
-                const weightageList = document.getElementById('weightageList');
                 const non_empty_value = subjectInput.value.trim();
                 const non_empty_value1 = weightageInput.value.trim();
-                const validSubject = Is_Alphanumeric(non_empty_value);
-                
+
                 if (non_empty_value && non_empty_value1) {
                     if (Is_Alphanumeric(non_empty_value) == false) {
                         alert ('Subject must only contain letters and numbers.');
@@ -67,15 +70,19 @@
                         const NumberedList = document.createElement('li');
                         NumberedList.textContent = non_empty_value;
                         subjectList.appendChild(NumberedList);
+                        subjectArray.push(subjectInput.value);
                         subjectInput.value = '';
                         const NumberedList1 = document.createElement('li');
                         NumberedList1.textContent = non_empty_value1;
                         weightageList.appendChild(NumberedList1);
+                        weightageArray.push(weightageInput.value);
                         weightageInput.value = '';
+                        
                     }
                 }
+
                 else {
-                    alert ('Both fields have to be filled!');
+                    alert ('Please enter a subject and the weightage!!!');
                 }
             }
             
@@ -89,19 +96,21 @@
                 let sTPD = (1 * studyTimePerDay);
                 var final = '';
 
-                for (let j=0; j < subjectArray.length; j++){
+                for (let j=0; j < weightageArray.length; j++){
                     weightageTotal += Number(weightageArray[j]);
                 }
-                
-                
+
                 for (let i=0; i < subjectArray.length; i++) {
                     var totalTime = weightageArray[i] / weightageTotal * (dL * sTPD);
                     var studyDays = Math.floor(totalTime / sTPD);
+                    studyDays = Math.round(studyDays * 10) / 10;
                     var remainingHours = totalTime % sTPD;
-                    final += subjectArray[i] + ':' + studyDays + ' days ' + remainingHours + ' hours';
+                    remainingHours = Math.round(remainingHours * 10) / 10;
+                    final += subjectArray[i] + ': ' + studyDays + ' days ' + remainingHours + ' hours' + "<br>";
                 }
-                
+                document.getElementById('display').innerHTML = final;
             }
+            
         </script>
     </body>
 </html>
