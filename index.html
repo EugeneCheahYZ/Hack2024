@@ -3,45 +3,42 @@
         <link rel="stylesheet" href='styles.css'>
         <script src="script.js"></script>
         <title>Study Planner</title>
-        <button id="darkModeToggle">Dark Mode</button>
     </head>
     <body>
         <h1 class='product'>STUDY PLANNER</h1>
-       
-        <div class="inputs">
-            <div class="input-group">
-                <label>Days until Exam Period:</label>
-                <input id="days">
-            </div>
-            <div class="input-group">
-                <label>Study Time per Day:</label>
-                <input id="studyTime">
-            </div>
-            
-            <div class="input-group">
-                <label>Subjects:</label>
-                <input id="subjectInput">
-            </div>
-            <div class="input-group">
-                <label>Weightage:</label>
-                <input id="weightageInput">
-            </div>            
-            
+        <button id="darkModeToggle">Dark Mode</button>
+        <div class="box-container">
+            <div class="inputs">
+                <div class="input-group">
+                    <label id ="input1">Days until Exam Period:</label>
+                    <input id="days">
+                </div>
+                <div class="input-group">
+                    <label id ="input2">Study Time per Day:</label>
+                    <input id="studyTime">
+                </div>
+                
+                <div class="input-group">
+                    <label id ="input3">Subjects:</label>
+                    <input id="subjectInput">
+                </div>
+                <div class="input-group">
+                    <label id ="input">Weightage:</label>
+                    <input id="weightageInput">
+                </div>            
+            </div>  
         </div>
         <div>
-            <button onclick="addSubjectandList()">+</button>               
-            <p class="lists">
-            <label>Subjects:</label><ol id="subjectList"></ol>
-            <label>Weightages:</label><ol id="weightageList"></ol> 
-            </p>
+            <button id="addButton" onclick="addSubjectandList()">+</button>               
+            <div class="lists">
+                <label>Subjects:</label><ol id="subjectList"></ol>
+                <label>Weightages:</label><ol id="weightageList"></ol> 
+            </div>
         </div>
         <div>
-            <button onclick="displayOutput()">Submit</button>
+            <button id="submitBtn" onclick="displayOutput()">Submit</button>
             <p class='outputdisplay' id="display"></p>
         </div>
-
-        
-
         <script>
             const subjectInput = document.getElementById('subjectInput');
             const weightageInput = document.getElementById('weightageInput');
@@ -61,7 +58,7 @@
                 const non_empty_value1 = weightageInput.value.trim();
                 const non_empty_value2 = examP.value.trim();
                 const non_empty_value3 = sTime.value.trim();
-                
+
                 if (isNaN(non_empty_value2) || !non_empty_value2) {
                     alert ('Please fill in the days left (number) until your exam period.');
                 }

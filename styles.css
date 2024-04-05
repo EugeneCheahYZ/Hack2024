@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 body {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
     background-color: #96E6B3;
     color: #e8ffd5;
     font-family: 'Cantarell', sans-serif;
@@ -12,29 +14,46 @@ body {
     text-align: center;
     background-color: #293c2b;
     border: none;
-    margin: 10px;
+    margin: 0;
+    margin-bottom: 30px;
     padding: 20px;
+    width: 100%; 
 }
 
-button {
+#addButton {
     background-color: #454E47;
     color: #caf5a6;
     border: none;
     padding: 10px 20px;
-    margin-top: 10px;
     cursor: pointer;
-    border-radius: 15px;
+    border-radius: 0 0 10px 10px; /* Rounded bottom corners */
     display: block;
-    width: 50%;
-    margin: 20px auto 0;
-    transition: background-color 0.3s ease, transform 0.3s ease; 
+    width: 680px; 
+    margin: 0 auto; /* Centered button */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    font-size: inherit;
+}
+
+#submitBtn {
+    background-color: #454E47;
+    color: #caf5a6;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px 10px; /* Rounded bottom corners */
+    display: block;
+    width: 680px; 
+    margin: 0 auto; /* Centered button */
+    transition: background-color 0.3s ease, transform 0.3s ease;
     font-family: 'Poppins', sans-serif;
     font-size: inherit;
 }
 
 button:hover {
     background-color: #5A6251; 
-    transform: scale(1.05); 
+    transform: scale(1.02); 
+    
 }
 
 input{
@@ -54,6 +73,15 @@ input{
     margin-bottom: 20px;
 }
 
+.box-container {
+    padding: 40px;
+    margin: 0 auto;
+    width: 600px; 
+    background-color: #6eb48e;
+    border-radius: 10px 10px 0 0; /* Rounded top corners */
+}
+
+
 label {
     display: inline-block;
     width: 200px;
@@ -67,12 +95,13 @@ label {
     top: 20px;
     left: 30px;
     background-color: #333;
-    color: white;
+    color: rgb(144, 219, 126);   
     border: none;
     padding: 5px 10px;
     cursor: pointer;
     width: auto;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
+    border-radius: 10px 10px
 }
 
 .dark-theme {
@@ -80,7 +109,7 @@ label {
     color: #e8ffd5;
 }
 
-.dark-theme .inputs, .dark-theme .inputs input, .dark-theme .inputs label {
+.dark-theme .inputs, .dark-theme .inputs label {
     color: #e8ffd4;
 }
 
@@ -94,11 +123,16 @@ label {
 }
 
 .dark-theme button:hover {
-    background-color: #63a28a;
+    background-color: #3a6555;
 }
 
+.dark-theme .box-container {
+    background-color: #46755b
+}
+
+
 body, .product, button {
-    transition: background-color 0.8s ease;
+    transition: background-color 1s ease;
 }
 
 .lists{
