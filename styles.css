@@ -101,3 +101,6 @@ body, .product, button {
     transition: background-color 0.8s ease;
 }
 
+.lists{
+    text-align: left;
+}
