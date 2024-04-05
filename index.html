@@ -10,30 +10,30 @@
         <div class="box-container">
             <div class="inputs">
                 <div class="input-group">
-                    <label>Days until Exam Period:</label>
+                    <label id ="input1">Days until Exam Period:</label>
                     <input id="days">
                 </div>
                 <div class="input-group">
-                    <label>Study Time per Day:</label>
+                    <label id ="input2">Study Time per Day:</label>
                     <input id="studyTime">
                 </div>
                 
                 <div class="input-group">
-                    <label>Subjects:</label>
+                    <label id ="input3">Subjects:</label>
                     <input id="subjectInput">
                 </div>
                 <div class="input-group">
-                    <label>Weightage:</label>
+                    <label id ="input">Weightage:</label>
                     <input id="weightageInput">
                 </div>            
             </div>  
         </div>
         <div>
             <button id="addButton" onclick="addSubjectandList()">+</button>               
-            <p class="lists">
-            <label>Subjects:</label><ol id="subjectList"></ol>
-            <label>Weightages:</label><ol id="weightageList"></ol> 
-            </p>
+            <div class="lists">
+                <label>Subjects:</label><ol id="subjectList"></ol>
+                <label>Weightages:</label><ol id="weightageList"></ol> 
+            </div>
         </div>
         <div>
             <button id="submitBtn" onclick="displayOutput()">Submit</button>
@@ -58,7 +58,7 @@
                 const non_empty_value1 = weightageInput.value.trim();
                 const non_empty_value2 = examP.value.trim();
                 const non_empty_value3 = sTime.value.trim();
-                
+
                 if (isNaN(non_empty_value2) || !non_empty_value2) {
                     alert ('This field only accepts numbers.');
                 }
