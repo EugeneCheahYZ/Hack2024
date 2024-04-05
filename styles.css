@@ -59,6 +59,7 @@ button:hover {
 input{
     font-family: 'Poppins', sans-serif;
     font-size: inherit;
+    display: inline-block;
 }
 
 .inputs {
