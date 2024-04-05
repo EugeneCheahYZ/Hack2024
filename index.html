@@ -37,7 +37,7 @@
         </div>
         <div>
             <button onclick="displayOutput()">Submit</button>
-            <p class='outputdisplay' id="display">...</p>
+            <p class='outputdisplay' id="display"></p>
         </div>
 
         
@@ -103,12 +103,12 @@
                 for (let i=0; i < subjectArray.length; i++) {
                     var totalTime = weightageArray[i] / weightageTotal * (dL * sTPD);
                     var studyDays = Math.floor(totalTime / sTPD);
+                    studyDays = Math.round(studyDays * 10) / 10;
                     var remainingHours = totalTime % sTPD;
-                    final += subjectArray[i] + ':' + studyDays + ' days ' + remainingHours + ' hours' + '                               ';
+                    remainingHours = Math.round(remainingHours * 10) / 10;
+                    final += subjectArray[i] + ': ' + studyDays + ' days ' + remainingHours + ' hours' + "<br>";
                 }
-                
-
-                document.getElementById('display').textContent = final;
+                document.getElementById('display').innerHTML = final;
             }
             
         </script>
