@@ -1,5 +1,3 @@
-
-
 <html>
     <head>
         <link rel="stylesheet" href='styles.css'>
@@ -37,18 +35,48 @@
             <ol id="weightageList"></ol> 
             </p>
         </div>
+<<<<<<< Updated upstream
+=======
+        <div>
+            <button onclick="displayOutput()">Submit</button>
+            <p class='outputdisplay' id="display">...</p>
+        </div>
+
+>>>>>>> Stashed changes
         
 
         <script>
+            const subjectInput = document.getElementById('subjectInput');
+            const weightageInput = document.getElementById('weightageInput');
+            var weightageTotal = 0;
+            weightageTotal = weightageTotal + parseInt(document.getElementById('weightageInput').innerHTML);
+            var intWeightage = parseInt(weightageTotal);
+            var daysLeft = 0;
+            daysLeft = parseInt(document.getElementById('days').value);
+            var studyTimePerDay = 0;
+            studyTimePerDay = parseInt(document.getElementById('studyTime').value);
+
+            const subjectList = document.getElementById('subjectList');
+            const weightageList = document.getElementById('weightageList');
+            var subjectArray = [];
+            var weightageArray = [];
+
             function addSubjectandList() {
+<<<<<<< Updated upstream
                 const subjectInput = document.getElementById('subjectInput');
                 const weightageInput = document.getElementById('weightageInput');
                 const subjectList = document.getElementById('subjectList');
                 const weightageList = document.getElementById('weightageList');
+=======
+                function Is_Alphanumeric(str) {
+                    return /^[a-zA-Z0-9]+(\s+[a-zA-Z0-9]+)*$/.test(str);
+                }
+>>>>>>> Stashed changes
                 const non_empty_value = subjectInput.value.trim();
                 const non_empty_value1 = weightageInput.value.trim();
 
                 if (non_empty_value && non_empty_value1) {
+<<<<<<< Updated upstream
                     const NumberedList = document.createElement('li');
                     NumberedList.textContent = non_empty_value;
                     subjectList.appendChild(NumberedList);
@@ -59,12 +87,42 @@
                     weightageInput.value = '';
 
 
+=======
+                    if (Is_Alphanumeric(non_empty_value) == false) {
+                        alert ('Subject must only contain letters and numbers.');
+                    }
+                    
+                    if (isNaN(non_empty_value1)) {
+                        alert ('Weightage must only contain numbers.');
+                    }
+                    if (Is_Alphanumeric(non_empty_value) == true && !isNaN(non_empty_value1)) {
+                        const NumberedList = document.createElement('li');
+                        NumberedList.textContent = non_empty_value;
+                        subjectList.appendChild(NumberedList);
+                        subjectArray.push(subjectInput.value);
+                        subjectInput.value = '';
+                        const NumberedList1 = document.createElement('li');
+                        NumberedList1.textContent = non_empty_value1;
+                        weightageList.appendChild(NumberedList1);
+                        weightageInput.value = '';
+                        weightageArray.push(parseInt(weightageInput.value));
+                    }
+>>>>>>> Stashed changes
                 }
 
                 else {
                     alert ('Please enter a subject and the weightage!!!');
                 }
             }
+            
+            function displayOutput(){
+                var final = intWeightage;
+
+                
+
+                document.getElementById('display').textContent = final;
+            }
+            
         </script>
     </body>
 </html>

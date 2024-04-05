@@ -101,3 +101,13 @@ body, .product, button {
     transition: background-color 0.8s ease;
 }
 
+<<<<<<< Updated upstream
+=======
+.lists{
+    text-align: left;
+}
+
+.outputdisplay{
+    font-size: 100px;
+}
+>>>>>>> Stashed changes
