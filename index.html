@@ -1,44 +1,42 @@
-
-
 <html>
     <head>
         <link rel="stylesheet" href='styles.css'>
         <script src="script.js"></script>
         <title>Study Planner</title>
-        <button id="darkModeToggle">Dark Mode</button>
     </head>
     <body>
         <h1 class='product'>STUDY PLANNER</h1>
-       
-        <div class="inputs">
-            <div class="input-group">
-                <label>Days until Exam Period:</label>
-                <input id="days">
-            </div>
-            <div class="input-group">
-                <label>Study Time per Day:</label>
-                <input id="studyTime">
-            </div>
-            
-            <div class="input-group">
-                <label>Subjects:</label>
-                <input id="subjectInput">
-            </div>
-            <div class="input-group">
-                <label>Weightage:</label>
-                <input id="weightageInput">
-            </div>            
-            
+        <button id="darkModeToggle">Dark Mode</button>
+        <div class="box-container">
+            <div class="inputs">
+                <div class="input-group">
+                    <label>Days until Exam Period:</label>
+                    <input id="days">
+                </div>
+                <div class="input-group">
+                    <label>Study Time per Day:</label>
+                    <input id="studyTime">
+                </div>
+                
+                <div class="input-group">
+                    <label>Subjects:</label>
+                    <input id="subjectInput">
+                </div>
+                <div class="input-group">
+                    <label>Weightage:</label>
+                    <input id="weightageInput">
+                </div>            
+            </div>  
         </div>
         <div>
-            <button onclick="addSubjectandList()">+</button>               
+            <button id="addButton" onclick="addSubjectandList()">+</button>               
             <p class="lists">
             <label>Subjects:</label><ol id="subjectList"></ol>
             <label>Weightage:</label><ol id="weightageList"></ol> 
             </p>
         </div>
         <div>
-            <button onclick="output()">Submit</button>
+            <button id="submitBtn" onclick="output()">Submit</button>
         </div>
         
 
