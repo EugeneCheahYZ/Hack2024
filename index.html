@@ -45,13 +45,6 @@
         <script>
             const subjectInput = document.getElementById('subjectInput');
             const weightageInput = document.getElementById('weightageInput');
-            var weightageTotal = 0;
-            weightageTotal = weightageTotal + parseInt(document.getElementById('weightageInput').innerHTML);
-            var intWeightage = parseInt(weightageTotal);
-            var daysLeft = 0;
-            daysLeft = parseInt(document.getElementById('days').value);
-            var studyTimePerDay = 0;
-            studyTimePerDay = parseInt(document.getElementById('studyTime').value);
 
             const subjectList = document.getElementById('subjectList');
             const weightageList = document.getElementById('weightageList');
@@ -82,8 +75,9 @@
                         const NumberedList1 = document.createElement('li');
                         NumberedList1.textContent = non_empty_value1;
                         weightageList.appendChild(NumberedList1);
+                        weightageArray.push(weightageInput.value);
                         weightageInput.value = '';
-                        weightageArray.push(parseInt(weightageInput.value));
+                        
                     }
                 }
 
@@ -92,9 +86,26 @@
                 }
             }
             
-            function displayOutput(){
-                var final = intWeightage;
+            
 
+            function displayOutput(){
+                var weightageTotal = 0;
+                var daysLeft = document.getElementById('days').value;
+                let dL = (1 * daysLeft);
+                var studyTimePerDay = document.getElementById('studyTime').value;
+                let sTPD = (1 * studyTimePerDay);
+                var final = weightageTotal;
+
+                for (let j=0; j < weightageArray.length; j++){
+                    weightageTotal += weightageArray[j];
+                }
+
+                /**for (let i=0; i < subjectArray.length; i++) {
+                    var totalTime = weightageArray[i] / 100 * (dL * sTPD);
+                    var studyDays = Math.floor(totalTime / sTPD);
+                    var remainingHours = totalTime % sTPD;
+                    final += subjectArray[i] + ':' + studyDays + ' days ' + remainingHours + ' hours';
+                }**/
                 
 
                 document.getElementById('display').textContent = final;
