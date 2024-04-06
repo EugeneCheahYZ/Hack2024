@@ -3,6 +3,7 @@
         <link rel="stylesheet" href='styles.css'>
         <script src="script.js"></script>
         <title>Study Planner</title>
+        <button id="darkModeToggle">Dark Mode</button>
     </head>
     <body>
         <h1 class='product'>STUDY PLANNER</h1>
@@ -14,40 +15,42 @@
             <div class="inputs">
                 <div class="input-group">
                     <label for="days">Days until Exam Period:</label>
-                    <input id="days" placeholder="e.g. 14">
+                    <label><input id="days" placeholder="e.g. 14">Days</label>
                 </div>
                 <div class="input-group">
                     <label for="studyTime">Study Time per Day:</label>
-                    <input id="studyTime" placeholder="e.g. 3">
+                    <label><input id="studyTime" placeholder="e.g. 3">Hours per Day</label>
                 </div>
                 
                 <div class="input-group">
                     <label for="subjectInput">Subjects:</label>
-                    <input id="subjectInput" placeholder="sasf">
+                    <input id="subjectInput" placeholder="Calc 2 Assignment">
+                    <label><input id='NMR' type="checkbox" value="10">Needs more revision</label>
+                    <label><input id='NLR' type='checkbox' value='-10'>Needs less revision</label>
                 </div>
                 <div class="input-group">
                     <label for="weightageInput">Weightage:</label>
-                    <input id="weightageInput" placeholder="e.g. 20">
+                    <label><input id="weightageInput" placeholder="e.g. 20">%</label>
                 </div>            
             </div>  
         </div>
-        
         <div>
-            <button id="addButton" onclick="addSubjectandList()">+</button>               
-            <div class="lists">
-                <label>Subjects:</label><ol id="subjectList"></ol>
-                <label>Weightages:</label><ol id="weightageList"></ol> 
-            </div>
+            <button onclick="addSubjectandList()">+</button>               
+            <p class="lists">
+            <label>Subjects:</label><ol id="subjectList"></ol>
+            <label>Weightages:</label><ol id="weightageList"></ol> 
+            </p>
         </div>
         <div>
-            <button id="submitBtn" onclick="displayOutput()">Submit</button>
+            <button onclick="displayOutput()">Submit</button>
             <p class='outputdisplay' id="display"></p>
         </div>
+
+        
+
         <script>
             const subjectInput = document.getElementById('subjectInput');
             const weightageInput = document.getElementById('weightageInput');
-            const examP = document.getElementById('days');
-            const sTime = document.getElementById('studyTime');
 
             const subjectList = document.getElementById('subjectList');
             const weightageList = document.getElementById('weightageList');
@@ -60,15 +63,7 @@
                 }
                 const non_empty_value = subjectInput.value.trim();
                 const non_empty_value1 = weightageInput.value.trim();
-                const non_empty_value2 = examP.value.trim();
-                const non_empty_value3 = sTime.value.trim();
 
-                if (isNaN(non_empty_value2) || !non_empty_value2) {
-                    alert ('Please fill in the days left (number) until your exam period.');
-                }
-                if (isNaN(non_empty_value3) || !non_empty_value3) {
-                    alert ('Please fill in the number of hours you study per day.');
-                }
                 if (non_empty_value && non_empty_value1) {
                     if (Is_Alphanumeric(non_empty_value) == false) {
                         alert ('Subject must only contain letters and numbers.');
@@ -79,17 +74,47 @@
                     }
                     if (Is_Alphanumeric(non_empty_value) == true && !isNaN(non_empty_value1)) {
                         /** Add the more revision less revision**/
-                        const NumberedList = document.createElement('li');
-                        NumberedList.textContent = non_empty_value;
-                        subjectList.appendChild(NumberedList);
-                        subjectArray.push(subjectInput.value);
-                        subjectInput.value = '';
-                        const NumberedList1 = document.createElement('li');
-                        NumberedList1.textContent = non_empty_value1;
-                        weightageList.appendChild(NumberedList1);
-                        weightageArray.push(weightageInput.value);
-                        weightageInput.value = '';
-                        
+                        if(NMR.checked && NLR.checked){
+                            alert("Both boxes can't be checked!")
+                        }
+
+                        if(NMR.checked && !NLR.checked){
+                            const NumberedList = document.createElement('li');
+                            NumberedList.textContent = non_empty_value;
+                            subjectList.appendChild(NumberedList);
+                            subjectArray.push(subjectInput.value);
+                            subjectInput.value = '';
+                            const NumberedList1 = document.createElement('li');
+                            NumberedList1.textContent = non_empty_value1;
+                            weightageList.appendChild(NumberedList1);
+                            weightageArray.push((weightageInput.value * 1) + 10);
+                            weightageInput.value = '';
+                        }
+
+                        if(NLR.checked & !NMR.checked){
+                            const NumberedList = document.createElement('li');
+                            NumberedList.textContent = non_empty_value;
+                            subjectList.appendChild(NumberedList);
+                            subjectArray.push(subjectInput.value);
+                            subjectInput.value = '';
+                            const NumberedList1 = document.createElement('li');
+                            NumberedList1.textContent = non_empty_value1;
+                            weightageList.appendChild(NumberedList1);
+                            weightageArray.push((weightageInput.value * 1) - 10);
+                            weightageInput.value = '';
+                        }
+                        if(!NMR.checked && !NLR.checked){
+                            const NumberedList = document.createElement('li');
+                            NumberedList.textContent = non_empty_value;
+                            subjectList.appendChild(NumberedList);
+                            subjectArray.push(subjectInput.value);
+                            subjectInput.value = '';
+                            const NumberedList1 = document.createElement('li');
+                            NumberedList1.textContent = non_empty_value1;
+                            weightageList.appendChild(NumberedList1);
+                            weightageArray.push((weightageInput.value * 1));
+                            weightageInput.value = '';
+                        }
                     }
                 }
 
