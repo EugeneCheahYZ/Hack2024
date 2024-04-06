@@ -3,7 +3,6 @@
         <link rel="stylesheet" href='styles.css'>
         <script src="script.js"></script>
         <title>Study Planner</title>
-        <button id="darkModeToggle">Dark Mode</button>
     </head>
     <body>
         <h1 class='product'>STUDY PLANNER</h1>
@@ -15,39 +14,50 @@
             <div class="inputs">
                 <div class="input-group">
                     <label for="days">Days until Exam Period:</label>
-                    <label><input id="days" placeholder="e.g. 14">Days</label>
+                    <input id="days" placeholder="e.g. 14">
                 </div>
                 <div class="input-group">
-                    <label for="studyTime">Study Time per Day:</label>
-                    <label><input id="studyTime" placeholder="e.g. 3">Hours per Day</label>
+                    <label for="studyTime">Study Hours per Day:</label>
+                    <input id="studyTime" placeholder="e.g. 3">
                 </div>
                 
                 <div class="input-group">
                     <label for="subjectInput">Subjects:</label>
-                    <input id="subjectInput" placeholder="Calc 2 Assignment">
-                    <label><input id='NMR' type="checkbox" value="10">Needs more revision</label>
-                    <label><input id='NLR' type='checkbox' value='-10'>Needs less revision</label>
+                    <input id="subjectInput" placeholder="Subject Name">
+                </div>
+                <div class="revision-container">
+                    <div class="checkbox-group">
+                        <input id='NMR' type="checkbox" value="10">
+                        <label for='NMR'>Needs more revision</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input id='NLR' type='checkbox' value='-10'>
+                        <label for='NLR'>Needs less revision</label>
+                    </div>
                 </div>
                 <div class="input-group">
-                    <label for="weightageInput">Weightage:</label>
-                    <label><input id="weightageInput" placeholder="e.g. 20">%</label>
-                </div>            
+                    <label for="weightageInput">Weightage (%):</label>
+                    <input id="weightageInput" placeholder="e.g. 20">
+                </div>           
             </div>  
         </div>
-        <div>
-            <button onclick="addSubjectandList()">+</button>               
-            <p class="lists">
-            <label>Subjects:</label><ol id="subjectList"></ol>
-            <label>Weightages:</label><ol id="weightageList"></ol> 
-            </p>
-        </div>
-        <div>
-            <button onclick="displayOutput()">Submit</button>
-            <p class='outputdisplay' id="display"></p>
-        </div>
-
         
-
+        <div>
+            <button id="addButton" onclick="addSubjectandList()">+</button>               
+            <div class="lists2">
+                <div class="output-container"></div>
+                    <label class='list3' id="sublist">Subjects:</label><ol class='list3' id="subjectList"></ol>
+                    <label class='list3' id="wlist">Weightages:</label><ol class='list3' id="weightageList"></ol>
+                </div> 
+            </div>
+            <div>
+                <button id="submitBtn" onclick="displayOutput()">Submit</button>
+                <div class="subbox">
+                    <p id="statement"></p>
+                    <p class='outputdisplay' id="display"></p>
+                </div>
+            </div>
+        </div>
         <script>
             const subjectInput = document.getElementById('subjectInput');
             const weightageInput = document.getElementById('weightageInput');
@@ -73,7 +83,6 @@
                         alert ('Weightage must only contain numbers.');
                     }
                     if (Is_Alphanumeric(non_empty_value) == true && !isNaN(non_empty_value1)) {
-                        /** Add the more revision less revision**/
                         if(NMR.checked && NLR.checked){
                             alert("Both boxes can't be checked!")
                         }
@@ -87,7 +96,7 @@
                             const NumberedList1 = document.createElement('li');
                             NumberedList1.textContent = non_empty_value1;
                             weightageList.appendChild(NumberedList1);
-                            weightageArray.push((weightageInput.value * 1) + 10);
+                            weightageArray.push((weightageInput.value * 1) + (NMR.value * 1));
                             weightageInput.value = '';
                         }
 
@@ -100,7 +109,7 @@
                             const NumberedList1 = document.createElement('li');
                             NumberedList1.textContent = non_empty_value1;
                             weightageList.appendChild(NumberedList1);
-                            weightageArray.push((weightageInput.value * 1) - 10);
+                            weightageArray.push((weightageInput.value * 1) + (NLR.value * 1));
                             weightageInput.value = '';
                         }
                         if(!NMR.checked && !NLR.checked){
@@ -132,6 +141,9 @@
                 var studyTimePerDay = document.getElementById('studyTime').value;
                 let sTPD = (1 * studyTimePerDay);
                 var final = '';
+                var disclaimer = 'If you study for ' + sTPD + " hours per day, you will have to work for:";
+                
+                document.getElementById('statement').innerHTML=disclaimer;
 
                 for (let j=0; j < weightageArray.length; j++){
                     weightageTotal += Number(weightageArray[j]);
@@ -143,7 +155,7 @@
                     studyDays = Math.round(studyDays * 10) / 10;
                     var remainingHours = totalTime % sTPD;
                     remainingHours = Math.round(remainingHours * 10) / 10;
-                    final += subjectArray[i] + ': ' + studyDays + ' days ' + remainingHours + ' hours' + "<br>";
+                    final += subjectArray[i] + ' for ' + studyDays + ' days ' + remainingHours + ' hours' + "<br>";
                 }
                 document.getElementById('display').innerHTML = final;
             }

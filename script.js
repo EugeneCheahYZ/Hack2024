@@ -5,3 +5,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
         document.body.classList.toggle('dark-theme');
     });
 });
+
