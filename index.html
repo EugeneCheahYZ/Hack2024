@@ -7,26 +7,32 @@
     </head>
     <body>
         <h1 class='product'>STUDY PLANNER</h1>
-       
-        <div class="inputs">
-            <div class="input-group">
-                <label>Days until Exam Period:</label>
-                <input id="days">
-            </div>
-            <div class="input-group">
-                <label>Study Time per Day:</label>
-                <input id="studyTime">
-            </div>
-            
-            <div class="input-group">
-                <label>Subjects:</label>
-                <input id="subjectInput">
-            </div>
-            <div class="input-group">
-                <label>Weightage:</label>
-                <input id="weightageInput">
-            </div>            
-            
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+        <button id="darkModeToggle">
+            <i class="fas fa-moon moon-icon"></i>
+        </button>
+        <div class="box-container">
+            <div class="inputs">
+                <div class="input-group">
+                    <label for="days">Days until Exam Period:</label>
+                    <label><input id="days" placeholder="e.g. 14">Days</label>
+                </div>
+                <div class="input-group">
+                    <label for="studyTime">Study Time per Day:</label>
+                    <label><input id="studyTime" placeholder="e.g. 3">Hours per Day</label>
+                </div>
+                
+                <div class="input-group">
+                    <label for="subjectInput">Subjects:</label>
+                    <input id="subjectInput" placeholder="Calc 2 Assignment">
+                    <label><input id='NMR' type="checkbox" value="10">Needs more revision</label>
+                    <label><input id='NLR' type='checkbox' value='-10'>Needs less revision</label>
+                </div>
+                <div class="input-group">
+                    <label for="weightageInput">Weightage:</label>
+                    <label><input id="weightageInput" placeholder="e.g. 20">%</label>
+                </div>            
+            </div>  
         </div>
         <div>
             <button onclick="addSubjectandList()">+</button>               
@@ -67,17 +73,48 @@
                         alert ('Weightage must only contain numbers.');
                     }
                     if (Is_Alphanumeric(non_empty_value) == true && !isNaN(non_empty_value1)) {
-                        const NumberedList = document.createElement('li');
-                        NumberedList.textContent = non_empty_value;
-                        subjectList.appendChild(NumberedList);
-                        subjectArray.push(subjectInput.value);
-                        subjectInput.value = '';
-                        const NumberedList1 = document.createElement('li');
-                        NumberedList1.textContent = non_empty_value1;
-                        weightageList.appendChild(NumberedList1);
-                        weightageArray.push(weightageInput.value);
-                        weightageInput.value = '';
-                        
+                        /** Add the more revision less revision**/
+                        if(NMR.checked && NLR.checked){
+                            alert("Both boxes can't be checked!")
+                        }
+
+                        if(NMR.checked){
+                            const NumberedList = document.createElement('li');
+                            NumberedList.textContent = non_empty_value;
+                            subjectList.appendChild(NumberedList);
+                            subjectArray.push(subjectInput.value);
+                            subjectInput.value = '';
+                            const NumberedList1 = document.createElement('li');
+                            NumberedList1.textContent = non_empty_value1;
+                            weightageList.appendChild(NumberedList1);
+                            weightageArray.push((weightageInput.value * 1) + 10);
+                            weightageInput.value = '';
+                        }
+
+                        if(NLR.checked){
+                            const NumberedList = document.createElement('li');
+                            NumberedList.textContent = non_empty_value;
+                            subjectList.appendChild(NumberedList);
+                            subjectArray.push(subjectInput.value);
+                            subjectInput.value = '';
+                            const NumberedList1 = document.createElement('li');
+                            NumberedList1.textContent = non_empty_value1;
+                            weightageList.appendChild(NumberedList1);
+                            weightageArray.push((weightageInput.value * 1) - 10);
+                            weightageInput.value = '';
+                        }
+                        if(!NMR.checked && !NLR.checked){
+                            const NumberedList = document.createElement('li');
+                            NumberedList.textContent = non_empty_value;
+                            subjectList.appendChild(NumberedList);
+                            subjectArray.push(subjectInput.value);
+                            subjectInput.value = '';
+                            const NumberedList1 = document.createElement('li');
+                            NumberedList1.textContent = non_empty_value1;
+                            weightageList.appendChild(NumberedList1);
+                            weightageArray.push((weightageInput.value * 1));
+                            weightageInput.value = '';
+                        }
                     }
                 }
 

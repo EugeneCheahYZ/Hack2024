@@ -40,6 +40,11 @@ button:hover {
 input{
     font-family: 'Poppins', sans-serif;
     font-size: inherit;
+<<<<<<< Updated upstream
+=======
+    display: inline-block;
+    
+>>>>>>> Stashed changes
 }
 
 .inputs {
