@@ -78,7 +78,7 @@
                             alert("Both boxes can't be checked!")
                         }
 
-                        if(NMR.checked){
+                        if(NMR.checked && !NLR.checked){
                             const NumberedList = document.createElement('li');
                             NumberedList.textContent = non_empty_value;
                             subjectList.appendChild(NumberedList);
@@ -91,7 +91,7 @@
                             weightageInput.value = '';
                         }
 
-                        if(NLR.checked){
+                        if(NLR.checked & !NMR.checked){
                             const NumberedList = document.createElement('li');
                             NumberedList.textContent = non_empty_value;
                             subjectList.appendChild(NumberedList);
